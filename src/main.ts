@@ -110,32 +110,15 @@ const cleanups = Array.from(items)
 
           const closestEdgeOfTarget = extractClosestEdge(self.data);
 
-          const items = Array.from(document.querySelectorAll('[data-task-id]'));
-          const indexOfSource = items.indexOf(source.element);
-          const indexOfTarget = items.indexOf(element);
-
-          if (indexOfTarget < 0 || indexOfSource < 0) {
+          if (!closestEdgeOfTarget) {
             return;
           }
 
-          // 1. swap with other element
-          const destinationIndex = getReorderDestinationIndex({
-            axis: 'vertical',
-            closestEdgeOfTarget,
-            indexOfTarget,
-            startIndex: indexOfSource,
-          });
-
-          const atDestinationIndex = items[destinationIndex];
-
-          // grabbing the parent of the item which is our "position:relative" container
+          // the "position:relative" container around the item
           const toMove = source.element.parentElement;
           invariant(toMove);
 
-          console.log({ destinationIndex, atDestinationIndex, toMove, closestEdgeOfTarget });
-
-          atDestinationIndex.parentElement?.insertAdjacentElement(
-            // going above the target
+          element.parentElement?.insertAdjacentElement(
             closestEdgeOfTarget === 'top' ? 'beforebegin' : 'afterend',
             toMove,
           );
