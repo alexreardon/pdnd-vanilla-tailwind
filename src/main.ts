@@ -1,16 +1,19 @@
 import {
   draggable,
   dropTargetForElements,
+  monitorForElements,
 } from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
 import { combine } from '@atlaskit/pragmatic-drag-and-drop/combine';
 import { setCustomNativeDragPreview } from '@atlaskit/pragmatic-drag-and-drop/element/set-custom-native-drag-preview';
 import { pointerOutsideOfPreview } from '@atlaskit/pragmatic-drag-and-drop/element/pointer-outside-of-preview';
+import { getReorderDestinationIndex } from '@atlaskit/pragmatic-drag-and-drop-hitbox/util/get-reorder-destination-index';
 import {
   attachClosestEdge,
   type Edge,
   extractClosestEdge,
 } from '@atlaskit/pragmatic-drag-and-drop-hitbox/closest-edge';
 import { getDropIndicator } from './drag-preview';
+import invariant from 'tiny-invariant';
 
 const items = document.querySelectorAll('[data-task-id]');
 
@@ -52,6 +55,11 @@ const cleanups = Array.from(items)
       dropTargetForElements({
         element,
         canDrop({ source }) {
+          // cannot drop on self
+          if (source.element === element) {
+            return false;
+          }
+          // only accepting tasks
           return source.element.hasAttribute('data-task-id');
         },
         getData({ input }) {
@@ -97,8 +105,40 @@ const cleanups = Array.from(items)
         onDragLeave() {
           element.nextElementSibling?.remove();
         },
-        onDrop() {
+        onDrop({ self, source }) {
           element.nextElementSibling?.remove();
+
+          const closestEdgeOfTarget = extractClosestEdge(self.data);
+
+          const items = Array.from(document.querySelectorAll('[data-task-id]'));
+          const indexOfSource = items.indexOf(source.element);
+          const indexOfTarget = items.indexOf(element);
+
+          if (indexOfTarget < 0 || indexOfSource < 0) {
+            return;
+          }
+
+          // 1. swap with other element
+          const destinationIndex = getReorderDestinationIndex({
+            axis: 'vertical',
+            closestEdgeOfTarget,
+            indexOfTarget,
+            startIndex: indexOfSource,
+          });
+
+          const atDestinationIndex = items[destinationIndex];
+
+          // grabbing the parent of the item which is our "position:relative" container
+          const toMove = source.element.parentElement;
+          invariant(toMove);
+
+          console.log({ destinationIndex, atDestinationIndex, toMove, closestEdgeOfTarget });
+
+          atDestinationIndex.parentElement?.insertAdjacentElement(
+            // going above the target
+            closestEdgeOfTarget === 'top' ? 'beforebegin' : 'afterend',
+            toMove,
+          );
         },
       }),
     );
