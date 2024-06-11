@@ -3,6 +3,7 @@ import {
   extractClosestEdge,
 } from '@atlaskit/pragmatic-drag-and-drop-hitbox/closest-edge';
 import { combine } from '@atlaskit/pragmatic-drag-and-drop/combine';
+import { triggerPostMoveFlash } from '@atlaskit/pragmatic-drag-and-drop-flourish/trigger-post-move-flash';
 import {
   draggable,
   dropTargetForElements,
@@ -119,6 +120,8 @@ function attachAll(): CleanupFn {
               closestEdgeOfTarget === 'top' ? 'beforebegin' : 'afterend',
               toMove,
             );
+
+            triggerPostMoveFlash(source.element);
           },
         }),
       );
