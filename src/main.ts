@@ -17,7 +17,7 @@ function attachAll(): CleanupFn {
   const cleanups = Array.from(document.querySelectorAll('[data-task-id]'))
     .filter((element): element is HTMLElement => element instanceof HTMLElement)
     .map((element) => {
-      const cleanup = combine(
+      return combine(
         draggable({
           element,
           onGenerateDragPreview({ nativeSetDragImage }) {
@@ -122,7 +122,6 @@ function attachAll(): CleanupFn {
           },
         }),
       );
-      return cleanup;
     });
 
   return function cleanupAll() {
