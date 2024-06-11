@@ -130,4 +130,4 @@ function attachAll(): CleanupFn {
   };
 }
 
-attachAll();
+const detachAll = attachAll();
