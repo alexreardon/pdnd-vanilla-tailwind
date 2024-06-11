@@ -17,6 +17,7 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "@atlaskit/pragmatic-drag-and-drop": "^1.1.11"
+    "@atlaskit/pragmatic-drag-and-drop": "^1.1.11",
+    "@atlaskit/pragmatic-drag-and-drop-hitbox": "^1.0.3"
   }
 }
