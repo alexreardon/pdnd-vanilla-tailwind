@@ -4,10 +4,312 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/main.css" type="text/css" rel="stylesheet" />
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="pt-6 my-0 mx-auto w-[420px]">
+      <div class="flex flex-col gap-2 border border-solid rounded p-2">
+        <div class="relative">
+          <div
+            data-task-id="task-0"
+            class="flex text-sm bg-white flex-row items-center border border-solid rounded p-2 pl-0 hover:bg-slate-100 hover:cursor-grab"
+            draggable="true"
+            data-drop-target-for-element="true"
+          >
+            <div class="w-6 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-grip-vertical"
+              >
+                <circle cx="9" cy="12" r="1"></circle>
+                <circle cx="9" cy="5" r="1"></circle>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="15" cy="12" r="1"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <circle cx="15" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <span class="truncate flex-grow flex-shrink">Organize a team-building event</span>
+            <div class="flex w-[100px] justify-end">
+              <span
+                class="bg-violet-200 uppercase p-1 rounded font-semibold flex-shrink-0 text-xs text-slate-900"
+                >TODO</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            data-task-id="task-1"
+            class="flex text-sm bg-white flex-row items-center border border-solid rounded p-2 pl-0 hover:bg-slate-100 hover:cursor-grab"
+            draggable="true"
+            data-drop-target-for-element="true"
+          >
+            <div class="w-6 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-grip-vertical"
+              >
+                <circle cx="9" cy="12" r="1"></circle>
+                <circle cx="9" cy="5" r="1"></circle>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="15" cy="12" r="1"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <circle cx="15" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <span class="truncate flex-grow flex-shrink">Create and maintain office inventory</span>
+            <div class="flex w-[100px] justify-end">
+              <span
+                class="bg-amber-200 uppercase p-1 rounded font-semibold flex-shrink-0 text-xs text-slate-900"
+                >In progress</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            data-task-id="task-2"
+            class="flex text-sm bg-white flex-row items-center border border-solid rounded p-2 pl-0 hover:bg-slate-100 hover:cursor-grab"
+            draggable="true"
+            data-drop-target-for-element="true"
+          >
+            <div class="w-6 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-grip-vertical"
+              >
+                <circle cx="9" cy="12" r="1"></circle>
+                <circle cx="9" cy="5" r="1"></circle>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="15" cy="12" r="1"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <circle cx="15" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <span class="truncate flex-grow flex-shrink">Update company website content</span>
+            <div class="flex w-[100px] justify-end">
+              <span
+                class="bg-green-200 uppercase p-1 rounded font-semibold flex-shrink-0 text-xs text-slate-900"
+                >Done</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            data-task-id="task-3"
+            class="flex text-sm bg-white flex-row items-center border border-solid rounded p-2 pl-0 hover:bg-slate-100 hover:cursor-grab"
+            draggable="true"
+            data-drop-target-for-element="true"
+          >
+            <div class="w-6 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-grip-vertical"
+              >
+                <circle cx="9" cy="12" r="1"></circle>
+                <circle cx="9" cy="5" r="1"></circle>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="15" cy="12" r="1"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <circle cx="15" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <span class="truncate flex-grow flex-shrink">Plan and execute marketing campaigns</span>
+            <div class="flex w-[100px] justify-end">
+              <span
+                class="bg-violet-200 uppercase p-1 rounded font-semibold flex-shrink-0 text-xs text-slate-900"
+                >TODO</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            data-task-id="task-4"
+            class="flex text-sm bg-white flex-row items-center border border-solid rounded p-2 pl-0 hover:bg-slate-100 hover:cursor-grab"
+            draggable="true"
+            data-drop-target-for-element="true"
+          >
+            <div class="w-6 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-grip-vertical"
+              >
+                <circle cx="9" cy="12" r="1"></circle>
+                <circle cx="9" cy="5" r="1"></circle>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="15" cy="12" r="1"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <circle cx="15" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <span class="truncate flex-grow flex-shrink"
+              >Coordinate employee training sessions</span
+            >
+            <div class="flex w-[100px] justify-end">
+              <span
+                class="bg-green-200 uppercase p-1 rounded font-semibold flex-shrink-0 text-xs text-slate-900"
+                >Done</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            data-task-id="task-5"
+            class="flex text-sm bg-white flex-row items-center border border-solid rounded p-2 pl-0 hover:bg-slate-100 hover:cursor-grab"
+            draggable="true"
+            data-drop-target-for-element="true"
+          >
+            <div class="w-6 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-grip-vertical"
+              >
+                <circle cx="9" cy="12" r="1"></circle>
+                <circle cx="9" cy="5" r="1"></circle>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="15" cy="12" r="1"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <circle cx="15" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <span class="truncate flex-grow flex-shrink">Manage facility maintenance</span>
+            <div class="flex w-[100px] justify-end">
+              <span
+                class="bg-green-200 uppercase p-1 rounded font-semibold flex-shrink-0 text-xs text-slate-900"
+                >Done</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            data-task-id="task-6"
+            class="flex text-sm bg-white flex-row items-center border border-solid rounded p-2 pl-0 hover:bg-slate-100 hover:cursor-grab"
+            draggable="true"
+            data-drop-target-for-element="true"
+          >
+            <div class="w-6 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-grip-vertical"
+              >
+                <circle cx="9" cy="12" r="1"></circle>
+                <circle cx="9" cy="5" r="1"></circle>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="15" cy="12" r="1"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <circle cx="15" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <span class="truncate flex-grow flex-shrink">Organize customer feedback surveys</span>
+            <div class="flex w-[100px] justify-end">
+              <span
+                class="bg-violet-200 uppercase p-1 rounded font-semibold flex-shrink-0 text-xs text-slate-900"
+                >TODO</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            data-task-id="task-7"
+            class="flex text-sm bg-white flex-row items-center border border-solid rounded p-2 pl-0 hover:bg-slate-100 hover:cursor-grab"
+            draggable="true"
+            data-drop-target-for-element="true"
+          >
+            <div class="w-6 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-grip-vertical"
+              >
+                <circle cx="9" cy="12" r="1"></circle>
+                <circle cx="9" cy="5" r="1"></circle>
+                <circle cx="9" cy="19" r="1"></circle>
+                <circle cx="15" cy="12" r="1"></circle>
+                <circle cx="15" cy="5" r="1"></circle>
+                <circle cx="15" cy="19" r="1"></circle>
+              </svg>
+            </div>
+            <span class="truncate flex-grow flex-shrink">Coordinate travel arrangements</span>
+            <div class="flex w-[100px] justify-end">
+              <span
+                class="bg-amber-200 uppercase p-1 rounded font-semibold flex-shrink-0 text-xs text-slate-900"
+                >In progress</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
