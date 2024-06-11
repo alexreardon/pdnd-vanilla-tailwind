@@ -127,9 +127,9 @@ function attachAll(): CleanupFn {
       );
     });
 
-  return function cleanupAll() {
-    cleanups.forEach((fn) => fn());
-  };
+  // combine all cleanups into a single function
+  return combine(...cleanups);
 }
 
+// We can use this to remove the drag and drop functionality we've added.
 const detachAll = attachAll();
